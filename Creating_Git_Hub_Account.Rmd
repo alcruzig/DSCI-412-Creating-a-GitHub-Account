@@ -1,0 +1,122 @@
+---
+title: "DSCI 412 Creating a Git Hub Account"
+author: "Amber L Cruz-Bhave"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 2 Main Things I Learned Each Week
+
+## Week 1
+
+### 1. Creating RMarkdown Files
+I learned how to create RMarkdown files in RStudio. RMarkdown files allow me to write regular text to explain my work, and also includes code and results all in the same document. This makes it easier to keep everything organized and to share my work with others.
+
+### 2. The Data Science Process
+Most importantly, I learned about the steps of the data science process, which includes:\
+ - **Defining the goal** (or problem)\
+ - **Collecting and managing data**\
+ - **Building the model**\
+ - **Evaluating and Critiquing the model**\
+ - **Presenting the results and documenting the process**\
+ - **Deploying the model to production**
+
+---
+
+## Week 2
+
+### 1. Using Summary Statistics
+I learned how to use summary statistics to inspect data for issues before building my model, such as:\  
+- Missing values\
+- Outliers\
+- Invalid data entries\
+- Checking data ranges and appropriate units\
+ 
+ This helps ensure data quality before analysis begins
+ 
+### 2. Exploring Data with Graphs
+I learned how to visualize data using graphs to uncover patterns and relationships. This includes:\
+- **Log transformations** of variables (for skewed data)\
+- Creating **bar charts** for categorical variables\
+- Creating **histograms** for numerical variables\
+- Plotting two variables together (**scatter plots and box plots**) to identify any correlations
+ 
+---
+
+## Week 3
+
+### 1. Linear Regression
+I learned that **linear regression** is the standard tool when you want to predict **a quantity**. For example, when predicting house prices based on size, location, and number of bedrooms. I was familiar with linear regression before, but I now understand how it fits into the bigger picture of data science workflows, being the go-to model for many numeric predictions.
+
+### 2. Challenges with Linear Regression 
+I also learned about some of the limitations of linear regression, especially when working with datasets with a large number of predictors. Linear regression can become unstable when there are too many factors or when the categorical variable has too many unique levels. In these cases, the model can overfit making model interpretation less reliable. Other models, like decision trees, may be a better fit in those instances.  
+
+---
+
+## Week 4  
+
+### 1. Introducing Logistic Regression for Classification
+During this week, we focused on logistic regression, which builds on the ideas of linear regression. Logistic regressions predict categorical outcomes rather than continuous ones. A key insight I gained is that logistic regression predicts **the probability** that an observation belongs to a certain class. 
+
+### 2. Evaluating Classifiers with a Confusion Matrix
+In week 4, I also learned about the **confusion matrix**, a table that evaluates how well a classifier performs. It shows:\
+- **True Positives (TP)**: Correctly predicted positive cases.\
+- **True Negatives(TN)**: Correctly predicted negative cases.\
+- **False Positives (FP)**: Cases predicted as positive but are actually negative.\
+- **False Negatives (FN)**: Cases predicted as negative but are actually positive.\
+ 
+We also learned about **accuracy**, which is the proportion of correct predictions out of all predictions. However, I found out that accuracy can be misleading if the data is imbalanced. For example, if 95% of the data belonged to 1 class, a model that only predicts the majority class would appear accurate, but actually be highly inaccurate. The confusion matrix is a better choice in most, but not all situations.
+ 
+---
+
+## Week 5
+
+### 1. Generalized Linear Models (GLMs)
+This week, I learned how GLMs extend regular linear regression to handle data where the outcome (Y variable) does not follow a normal distribution. Instead, GLMs work with other types of distributions, such as **Binomial** (for yes and no outcomes), **poisson** (for count data), and **gamma** (for continuous data that is skewed). I also learned that GLMs are easy to interpret and can include offsets (to adjust for different exposure times) and weights (to give some data points more importance).
+
+### 2. Building Poisson and Gamma Regression Models
+I also practiced building GLMs using poisson and gamma distributions. Poisson regression works well for modeling count data (number of events happening within a certain period). Gamma regression works well for modeling continuous data with a skewed distribution. Learning to choose the right distribution for the data was an important part of understanding how to use GLMs correctly.
+
+---
+
+## Week 6
+
+### 1. Decision Trees and Random Forests
+On week 6, we learned about decision trees, which are simple models that split data into groups by asking a series of yes/no questions. Decision trees are easy to explain to others because you can visualize the tree. However, they can sometimes overfit the data. To solve this, I learned about random forests, which combine many decision trees into one stronger model. Each tree is slightly different, and the forest makes predictions by averaging the predictions from all the trees. This makes random forests more stable and accurate than a single decision tree.
+
+### 2. Learned to Find the Best Tree Size and Variable Importance
+I also learned to *prune* decision trees by finding the best k-value, which controls how deep the tree can grow. Smaller trees are simpler but may miss patterns, while bigger trees fit the training data better but may overfit. For random forests, I learned how to use functions like **importance()** and **varImpPLot()** to show which variables are most important to the model. This helped me to understand which predictors really mattered and which ones could be removed without hurting the model. 
+
+---
+
+## Week 7
+
+### 1. Understanding K-Means Clustering
+On week 7, I learned K-means Clustering, an unsupervised learning method used only when we have predictor variables but no true response variable. The goal of clustering is to group observations into subgroups (clusters) where data points within the same cluster are similar to each other. This method is useful when trying to find patterns in data without predefined categories.
+
+### 2. Applying K-Means Clustering in R
+I also learned how to perform K-means Clustering in R using **kmeans()** k-means function, which groups the observations in a dataset into **k clusters** based on similarity. To visualize the clusters, I used the **fviz_cluster()** function, which creates a clear plot showing how the observations are grouped. This helped me to interpret the clusters and understand how well the model is separating the data.
+
+---
+
+## Week 8
+
+### 1. Documentation for Peers for Data Science Projects
+This week, I realized the importance of creating documentation not just for an audience, but also for my team and future readers. Good documentation should focus on:\
+- Clearly stating the **teams goals**.\
+- Using **standard terminology** so others can easily understand.\
+- Highlighting **important details in the data** to prevent confusion.\
+- Ensuring that **future analysts can continue the work** without difficulty.\
+ 
+### 2. Creating Slide Presentation in R with `ioslides`
+ I also learned how to create slide presentations directly from an R Markdown file using isoslides. This allows us to convert an `.Rmd` file into a set of slides for presentations. Some key formatting options I learned include:\
+ - Adding **incremental bullet points** to reveal times one at a time.\
+ - Adjusting **text size** to fit more content on a slide.\
+ - Using **widescreen layout** for better slide readability.\
+ 
+ This is a useful skill for presenting data science results in a professional format while keeping everything within R Markdown.
+ 
